@@ -1,15 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import {WebView} from 'react-native';
+import { registerRootComponent } from 'expo';
+import * as React from 'react';
+import { WebView } from 'react-native-webview';
+import { StyleSheet,SafeAreaView} from 'react-native';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-       <WebView
+   <SafeAreaView style={styles.container}>
+    <WebView
       style={styles.container}
       source={{ uri: 'https://hichatgpt.info' }}
-        />
-    </View>
+    />
+	</SafeAreaView>
   );
 }
 
@@ -19,3 +21,4 @@ const styles = StyleSheet.create({
   
   },
 });
+registerRootComponent(App); 
